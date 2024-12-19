@@ -1,57 +1,55 @@
-# Gilded Rose
+Gilded Rose Inventory System
 
-This is the Gilded Rose kata in TypeScript.
+Welcome to the Gilded Rose Inventory System! This repository implements a solution for the Gilded Rose Kata, a classic refactoring exercise. The application simulates the daily quality updates of various inventory items, following specific rules for each type of item.
 
-## Getting started
+--------------------------------
+Overview
 
-Install dependencies
+The Gilded Rose Inventory System manages an inventory of items, updating their quality and sell-by values daily according to predefined rules. The repository includes both the application logic and a comprehensive test suite written in Jest to validate the functionality.
 
-```sh
+--------------------------------
+Getting Started
+
+Prerequisites
+
+Ensure you have the following installed on your machine:
+
+Node.js (v14 or later)
+
+npm (Node Package Manager, typically included with Node.js)
+
+Installation
+
+Clone the repository:
+
+git clone git@github.com:tomerdev1/GildedRoseKata.git
+cd GildedRoseKata
+
+Install dependencies:
+
 npm install
-```
 
-## Run the unit tests from the Command-Line
+--------------------------------
+Running the Application
 
-There are two unit test frameworks to choose from, Jest and Mocha.
+To run the application and simulate inventory updates:
 
-```sh
+Open a terminal in the project directory.
+
+Run the application script with a predefined simulation:
+
+npx ts-node src/app.ts
+
+This will output the updated inventory for each simulated day.
+
+Alternatively, you can modify the items in the src/app.ts file to simulate different scenarios.
+
+--------------------------------
+Running Tests
+
+This repository uses Jest for testing. To run the test suite:
+
 npm run test:jest
-```
 
-To run all tests in watch mode
-
-```sh
-npm run test:jest:watch
-```
-
-Mocha
-
-```sh
-npm run test:mocha
-```
-
-
-## Run the TextTest fixture from the Command-Line
-
-_You may need to install `ts-node`_
-
-```sh
-npx ts-node test/golden-master-text-test.ts
-```
-
-Or with number of days as args:
-```sh
-npx ts-node test/golden-master-text-test.ts 10
-```
-
-You should make sure the command shown above works when you execute it in a terminal before trying to use TextTest (see below).
-
-
-## Run the TextTest approval test that comes with this project
-
-There are instructions in the [TextTest Readme](../texttests/README.md) for setting up TextTest. You will need to specify the Python executable and interpreter in [config.gr](../texttests/config.gr). Uncomment these lines:
-
-    executable:${TEXTTEST_HOME}/python/texttest_fixture.py
-    interpreter:python
 
 
