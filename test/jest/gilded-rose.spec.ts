@@ -119,7 +119,7 @@ describe("Gilded Rose Inventory System", () => {
   });
   describe("Conjured Item Behavior", () => {
     it("should degrade in quality twice as fast before sell-by date", () => {
-      const gildedRose = new GildedRose([new Item("Conjured", 1, 4)]);
+      const gildedRose = new GildedRose([new Item("Conjured Mana Cake", 1, 4)]);
       const updatedItems = gildedRose.updateQuality();
       const updatedItem = updatedItems[0];
       expect(updatedItem.sellIn).toBe(0);
@@ -127,7 +127,7 @@ describe("Gilded Rose Inventory System", () => {
     });
 
     it("should degrade in quality four times as fast after sell-by date", () => {
-      const gildedRose = new GildedRose([new Item("Conjured", 0, 8)]);
+      const gildedRose = new GildedRose([new Item("Conjured Mana Cake", 0, 8)]);
       const updatedItems = gildedRose.updateQuality();
       const updatedItem = updatedItems[0];
       expect(updatedItem.sellIn).toBe(-1);
