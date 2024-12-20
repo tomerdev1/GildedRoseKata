@@ -1,4 +1,4 @@
-import { Item } from "./item";
+import { Item, SpecialItems } from "./item";
 import {
   updateAgedBrie,
   updateBackstagePasses,
@@ -14,21 +14,19 @@ export class GildedRose {
   }
 
   updateQuality() {
-    const isAgedBrie = (item: Item) => item.name === "Aged Brie";
-    const isBackstagePass = (item: Item) =>
-      item.name === "Backstage passes to a TAFKAL80ETC concert";
-    const isSulfuras = (item: Item) =>
-      item.name === "Sulfuras, Hand of Ragnaros";
-
-    for (const item of this.items) {
-      if (isAgedBrie(item)) {
-        updateAgedBrie(item);
-      } else if (isBackstagePass(item)) {
-        updateBackstagePasses(item);
-      } else if (isSulfuras(item)) {
-        updateSulfuras(item);
-      } else {
-        updateNormalItem(item);
+    for (let item of this.items) {
+      switch (item.name) {
+        case SpecialItems.AgedBrie:
+          item = updateAgedBrie(item);
+          break;
+        case SpecialItems.BackstagePass:
+          item = updateBackstagePasses(item);
+          break;
+        case SpecialItems.Sulfuras:
+          item = updateSulfuras(item);
+          break;
+        default:
+          item = updateNormalItem(item);
       }
     }
     return this.items;

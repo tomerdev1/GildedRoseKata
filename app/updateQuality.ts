@@ -1,7 +1,10 @@
 import { Item } from "./item";
 
-const isQualityAboveMinimum = (quality) => quality > 0;
-const isQualityBelowMaximum = (quality) => quality < 50;
+const MAX_QUALITY = 50;
+const MIN_QUALITY = 0;
+
+const isQualityAboveMinimum = (quality) => quality > MIN_QUALITY;
+const isQualityBelowMaximum = (quality) => quality < MAX_QUALITY;
 
 const decreaseQuality = (quality) =>
   isQualityAboveMinimum(quality) ? quality-- : quality;
