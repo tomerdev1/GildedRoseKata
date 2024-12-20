@@ -1,12 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var gilded_rose_1 = require("../app/gilded-rose");
+var item_1 = require("../app/item");
 var items = [
-    new gilded_rose_1.Item("Aged Brie", 2, 0),
-    new gilded_rose_1.Item("Backstage passes to a TAFKAL80ETC concert", 15, 20),
-    new gilded_rose_1.Item("Sulfuras, Hand of Ragnaros", 0, 80),
-    new gilded_rose_1.Item("Conjured Mana Cake", 3, 6),
-    new gilded_rose_1.Item("Normal Item", 10, 20),
+    new item_1.Item("Aged Brie", 2, 0),
+    new item_1.Item("Backstage passes to a TAFKAL80ETC concert", 15, 20),
+    new item_1.Item("Sulfuras, Hand of Ragnaros", 0, 80),
+    new item_1.Item("Conjured Mana Cake", 3, 6),
+    new item_1.Item("Normal Item", 10, 20),
 ];
 var gildedRose = new gilded_rose_1.GildedRose(items);
 console.log("-------- Day 0 --------");

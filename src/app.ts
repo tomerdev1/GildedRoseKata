@@ -1,4 +1,5 @@
-import { GildedRose, Item } from "../app/gilded-rose";
+import { GildedRose } from "../app/gilded-rose";
+import { Item } from "../app/item";
 
 const items = [
   new Item("Aged Brie", 2, 0),
