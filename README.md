@@ -51,5 +51,9 @@ This repository uses Jest for testing. To run the test suite:
 
 npm run test:jest
 
+--------------------------------
+Building the Application
 
+After making changes to .ts files, make sure to run the following command to compile the TypeScript files:
 
+npm run compile
