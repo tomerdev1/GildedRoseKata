@@ -48,3 +48,14 @@ export const updateSulfuras = (item: Item) => {
   item.quality = 80;
   return item;
 };
+
+export const updateConjured = (item: Item) => {
+  item.quality = decreaseQuality(item.quality);
+  item.quality = decreaseQuality(item.quality);
+  if (item.sellIn <= 0) {
+    item.quality = decreaseQuality(item.quality);
+    item.quality = decreaseQuality(item.quality);
+  }
+  item.sellIn -= 1;
+  return item;
+};

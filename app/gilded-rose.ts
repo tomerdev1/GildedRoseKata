@@ -2,6 +2,7 @@ import { Item, SpecialItems } from "./item";
 import {
   updateAgedBrie,
   updateBackstagePasses,
+  updateConjured,
   updateNormalItem,
   updateSulfuras,
 } from "./updateQuality";
@@ -24,6 +25,9 @@ export class GildedRose {
           break;
         case SpecialItems.Sulfuras:
           item = updateSulfuras(item);
+          break;
+        case SpecialItems.Conjured:
+          item = updateConjured(item);
           break;
         default:
           item = updateNormalItem(item);
