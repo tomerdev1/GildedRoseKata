@@ -7,9 +7,9 @@ const isQualityAboveMinimum = (quality) => quality > MIN_QUALITY;
 const isQualityBelowMaximum = (quality) => quality < MAX_QUALITY;
 
 const decreaseQuality = (quality) =>
-  isQualityAboveMinimum(quality) ? quality-- : quality;
+  isQualityAboveMinimum(quality) ? quality - 1 : quality;
 const increaseQuality = (quality) =>
-  isQualityBelowMaximum(quality) ? quality++ : quality;
+  isQualityBelowMaximum(quality) ? quality + 1 : quality;
 
 const updateBasic = (item: Item) => {
   item.quality = decreaseQuality(item.quality);
@@ -26,7 +26,8 @@ export const updateNormalItem = (item: Item) => {
 
 export const updateAgedBrie = (item: Item) => {
   item.quality = increaseQuality(item.quality);
-  item.quality = item.sellIn < 0 ? increaseQuality(item.quality) : item.quality;
+  item.quality =
+    item.sellIn <= 0 ? increaseQuality(item.quality) : item.quality;
   item.sellIn -= 1;
   return item;
 };
