@@ -23,6 +23,7 @@ Installation
 Clone the repository:
 
 git clone git@github.com:tomerdev1/GildedRoseKata.git
+
 cd GildedRoseKata
 
 Install dependencies:
