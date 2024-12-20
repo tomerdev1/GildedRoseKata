@@ -117,4 +117,21 @@ describe("Gilded Rose Inventory System", () => {
       expect(updatedItem.quality).toBe(0);
     });
   });
+  describe("Conjured Item Behavior", () => {
+    it("should degrade in quality twice as fast before sell-by date", () => {
+      const gildedRose = new GildedRose([new Item("Conjured", 1, 4)]);
+      const updatedItems = gildedRose.updateQuality();
+      const updatedItem = updatedItems[0];
+      expect(updatedItem.sellIn).toBe(0);
+      expect(updatedItem.quality).toBe(2);
+    });
+
+    it("should degrade in quality four times as fast after sell-by date", () => {
+      const gildedRose = new GildedRose([new Item("Conjured", 0, 8)]);
+      const updatedItems = gildedRose.updateQuality();
+      const updatedItem = updatedItems[0];
+      expect(updatedItem.sellIn).toBe(-1);
+      expect(updatedItem.quality).toBe(4);
+    });
+  });
 });
